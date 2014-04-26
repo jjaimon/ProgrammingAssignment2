@@ -47,7 +47,6 @@ cacheSolve <- function(x, ...) {
     x$getInverse()
 }
 
-
 # Following are the test code. 
 # Create a special matrix
 a <- makeCacheMatrix(matrix(1:4,2))
