@@ -7,13 +7,13 @@ makeCacheMatrix <- function(x = matrix()) {
         m <<- x
         
         ## Following functions are self explanatory.  
-        # getInverse returns the matrix i -> cached value
+        # getInverse() returns the matrix i -> cached value
         getInverse <- function() i 
-        # setInverse sets the inverse matrix, ie i
+        # setInverse() sets the inverse matrix, ie i
         setInverse <- function(y)  i <<- y        
-        # get returns the original matrix and set sets the matrix.
+        # get() returns the original matrix and set sets the matrix.
         get <- function() m
-        # set resets the inverse matrix when the matrix changes
+        # set() resets the inverse matrix when the matrix changes
         set <- function(y) {
             if (! identical(m, y)) {
                 m <<- y
@@ -34,7 +34,7 @@ makeCacheMatrix <- function(x = matrix()) {
 # (and the matrix has not changed), then cacheSolve should retrieve 
 # the inverse from the cache.
 cacheSolve <- function(x, ...) {
-    # Do we have an inverse already cached. Inverse will be NULL 
+    # Do we have an inverse already cached?. Inverse will be NULL 
     # if the matrix is changed or inverse is never calculated.
     if (is.null(x$getInverse())) {
         message("Set cache data")
